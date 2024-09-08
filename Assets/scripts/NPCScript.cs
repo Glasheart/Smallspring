@@ -16,6 +16,8 @@ public class NPCScript: MonoBehaviour
 
     public float speed = 0.5f;
 
+    public Dialogue dialogue;
+
     // Start is called before the first frame update
     void Start()
     {
