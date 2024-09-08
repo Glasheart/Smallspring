@@ -11,6 +11,7 @@ public class cam_track : MonoBehaviour
     private GameObject Player;
     private Transform player_loc;
     private Rigidbody2D rb;
+    public bool locked = false;
     void Start()
     {
         Player = GameObject.Find("Player");
@@ -21,6 +22,8 @@ public class cam_track : MonoBehaviour
     private Vector2 distance;
     void Update()
     {
+        if(locked) return;
+
         distance = player_loc.position - transform.position;
         if(distance.sqrMagnitude > 2)
             transform.position = new Vector3(transform.position.x + distance.x * Time.deltaTime * follow_mod, transform.position.y + distance.y * Time.deltaTime * follow_mod, -10);
