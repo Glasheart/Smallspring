@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCScript: MonoBehaviour
 {
     [SerializeField] Rigidbody2D body;
+    
 
     private Vector2[] moveChoices = new Vector2[] {Vector2.zero, Vector2.right, Vector2.up, Vector2.left, Vector2.down, Vector2.zero};
 
@@ -42,5 +43,10 @@ public class NPCScript: MonoBehaviour
     void ChooseMoveDirection()
     {
         currDirection = Mathf.FloorToInt(Random.Range(0, moveChoices.Length));
+    }
+
+    public void talk()
+    {
+        FindObjectOfType<DialogueController>().StartConversation(dialogue);
     }
 }
