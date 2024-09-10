@@ -459,10 +459,12 @@ MonoBehaviour:
   - {fileID: 639186533}
   - {fileID: 1492741497}
   - {fileID: 2063495179}
+  shopPanel: {fileID: 1901078974}
   BerrySprite: {fileID: 21300000, guid: d61b2cf9dbe70c04baf8a082abb7d7ee, type: 3}
   DrinkSprite: {fileID: 21300000, guid: a76496c47d2f25544bf250b798e807f3, type: 3}
   HerbSprite: {fileID: 0}
   WoodSprite: {fileID: 0}
+  inventorySlots: 000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &94552387
 GameObject:
   m_ObjectHideFlags: 0
@@ -48112,7 +48114,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2103556619}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 26311785}
+        m_TargetAssemblyTypeName: Shopkeeper, Assembly-CSharp
+        m_MethodName: sell
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2103556619
 MonoBehaviour:
   m_ObjectHideFlags: 0
