@@ -5,10 +5,13 @@ using UnityEngine;
 public class Axe : MonoBehaviour
 {
     private Animator anim;
+    private BoxCollider2D axe_collider;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        axe_collider = GetComponent<BoxCollider2D>();
+        axe_collider.enabled = false;
     }
 
     
@@ -22,8 +25,10 @@ public class Axe : MonoBehaviour
 
     IEnumerator play_anim()
     {
+        axe_collider.enabled = true;
         anim.Play("Axe_swing");
         yield return new WaitForSeconds(1);
         anim.Play("Idle");
+        axe_collider.enabled = false;
     }
 }

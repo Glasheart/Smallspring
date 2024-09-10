@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tree : MonoBehaviour
 {
     [SerializeField] private LayerMask tool_layer;
+    public bool is_tree = false;
     private BoxCollider2D tree_collider;
     void Start()
     {

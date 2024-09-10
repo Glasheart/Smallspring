@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
         horzontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        
         direction = new Vector2(horzontal, vertical);
 
         if(rb.velocity.magnitude < max_speed)
@@ -29,5 +30,13 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector3(max_speed * horzontal * Mathf.Abs(direction.normalized.x), max_speed * vertical * Mathf.Abs(direction.normalized.y));
         }
+
+        if ((rb.velocity.x < 0 && transform.localScale.x > 0) || (rb.velocity.x > 0 && transform.localScale.x < 0))
+            flip();
+    }
+
+    private void flip()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1);
     }
 }
