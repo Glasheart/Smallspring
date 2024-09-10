@@ -7,22 +7,39 @@ using UnityEngine.UI;
 public class Player_inventory_visuals : MonoBehaviour
 {
     [SerializeField] private Sprite empty, herb, wood;
+    [SerializeField] private bool chest = false;
 
     private Image[] visual_slots;
     private TMP_Text[] texts;
     private Inventory inventory;
+    
     void Start()
     {
         int i = 0;
-        inventory = GameObject.Find("Player").GetComponent<Inventory>();
-        
+        if(!chest)
+            inventory = GameObject.Find("Player").GetComponent<Inventory>();
+        else
+            inventory = GameObject.Find("chest").GetComponent<Inventory>();
+
         visual_slots = new Image[transform.childCount];
         texts = new TMP_Text[transform.childCount];
 
         foreach (Transform t in transform) 
         {
-            visual_slots[i] = t.gameObject.GetComponent<Image>();
-            texts[i] = t.GetChild(0).GetComponent<TMP_Text>();
+            if(!chest)
+            {
+                visual_slots[i] = t.gameObject.GetComponent<Image>();
+                texts[i] = t.GetChild(0).GetComponent<TMP_Text>();
+            }
+            else
+            {
+                if (i != 0)
+                {
+                    visual_slots[i - 1] = t.gameObject.GetComponent<Image>();
+                    texts[i - 1] = t.GetChild(0).GetComponent<TMP_Text>();
+                }
+            }
+            
             i++;
         }
     }
