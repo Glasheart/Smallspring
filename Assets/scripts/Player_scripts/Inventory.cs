@@ -17,9 +17,10 @@ public enum Item_types
 }
 public class Inventory : MonoBehaviour
 {
-    private slot[] slots;
+    public slot[] slots;
     public int slot_count, slot_max;
     public int money = 0;
+    private Player_inventory_visuals vis;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class Inventory : MonoBehaviour
             slots[i].count = 0;
             slots[i].type = Item_types.EMPTY;
         }
+        vis = GameObject.Find("Inventory_visuals").GetComponent<Player_inventory_visuals>();
     }
     public void add_item(Item_types type)
     {
@@ -38,12 +40,14 @@ public class Inventory : MonoBehaviour
             {
                 slots[i].type = type;
                 slots[i].count++;
+                vis.change_slot(i);
                 Debug.Log("herb, " + slots[i].count.ToString());
                 break;
             }
             if (slots[i].type == type && slots[i].count < slot_max)
             {
                 slots[i].count++;
+                vis.change_slot(i);
                 Debug.Log("herb, " + slots[i].count.ToString());
                 break;
             }
