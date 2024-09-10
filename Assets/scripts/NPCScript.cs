@@ -10,12 +10,15 @@ public class NPCScript: MonoBehaviour
     private Vector2[] moveChoices = new Vector2[] {Vector2.zero, Vector2.right, Vector2.up, Vector2.left, Vector2.down, Vector2.zero};
 
     public float lowChoiceTime = 1.0f;
-    public float highChoiceTime = 4.0f;
+    public float highChoiceTime = 2.0f;
     public float decisionTime = 0f;
 
     public int currDirection = 0;
 
     public float speed = 0.5f;
+
+    public int hourWanderStart;//when they will start to wander the village
+    public int hourWanderEnd; //when they will be back home
 
     public Dialogue dialogue;
 
