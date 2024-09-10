@@ -11,9 +11,9 @@ public struct slot
 }
 public enum Item_types
 {
-    EMPTY,
-    HERB,
-    WOOD
+    EMPTY = 0,
+    HERB = 2,
+    WOOD = 1
 }
 public class Inventory : MonoBehaviour
 {
@@ -41,15 +41,41 @@ public class Inventory : MonoBehaviour
                 slots[i].type = type;
                 slots[i].count++;
                 vis.change_slot(i);
-                Debug.Log("herb, " + slots[i].count.ToString());
                 break;
             }
             if (slots[i].type == type && slots[i].count < slot_max)
             {
                 slots[i].count++;
                 vis.change_slot(i);
-                Debug.Log("herb, " + slots[i].count.ToString());
                 break;
+            }
+        }
+    }
+
+    public void sell_items()
+    {
+       for(int i = 0;i < slots.Length;i++)
+        {
+            money += slots[i].count * (int)slots[i].type;
+
+            empty_inventory_slot(i);
+        }
+
+        Debug.Log(money);
+    }
+    public void empty_inventory_slot(int i)
+    {
+        slots[i].type = Item_types.EMPTY;
+        slots[i].count = 0;
+        vis.change_slot(i);
+
+        if(i < slots.Length-1)
+        {
+            if (slots[i + 1].type != Item_types.EMPTY)
+            {
+                slots[i] = slots[i + 1];
+                vis.change_slot(i);
+                empty_inventory_slot(i + 1);
             }
         }
     }

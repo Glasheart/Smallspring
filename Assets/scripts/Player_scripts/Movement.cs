@@ -6,12 +6,14 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float max_speed, acceleration;
 
+    private slot_highlight slot;
     private Rigidbody2D rb;
     private float horzontal, vertical;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
+        slot = GameObject.Find("Highlight").GetComponent<slot_highlight>();
     }
 
     private float cur_speed;
@@ -33,6 +35,15 @@ public class Movement : MonoBehaviour
 
         if ((rb.velocity.x < 0 && transform.localScale.x > 0) || (rb.velocity.x > 0 && transform.localScale.x < 0))
             flip();
+
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            slot.change_highlighted_slot(1);
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            slot.drop_item();
+        }
     }
 
     private void flip()

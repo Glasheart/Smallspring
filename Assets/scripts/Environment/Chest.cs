@@ -18,6 +18,15 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (chest_collider.IsTouchingLayers(interact_layer))
+        {
+            player_inventory.sell_items();
+        }
     }
+    /*Version of chest that sells when interacting
+     if (chest_collider.IsTouchingLayers(interact_layer))
+        {
+            player_inventory.sell_items();
+        }
+    */
 }

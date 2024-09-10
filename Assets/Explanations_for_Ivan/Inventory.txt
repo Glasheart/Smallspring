@@ -1,1 +1,1 @@
-There is an enum named item type, please add every item you can pick up to the enum
+There is an enum named item type, please add every item you can pick up to the enum.  Also make each of them equal their monetary value
