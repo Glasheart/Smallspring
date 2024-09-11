@@ -13,7 +13,21 @@ public enum Item_types
 {
     EMPTY = 0,
     HERB = 2,
-    WOOD = 1
+    WOOD = 1,
+    COFFEEBEANS = 1,
+    GLOWBERRIES = 3,
+    STRAWBERRIES = 1,
+    BLUEBERRIES = 1,
+    RASPBERRIES = 2,
+    BLACKBERRIES = 2,
+    SAP = 2,
+    PUREBERRIES = 4,
+    APPLES = 2,
+    TEALEAVES = 1,
+    CAMOMILE = 2,
+    GINGER = 2,
+    FEVERFEW = 3,
+    GINSENG = 3
 }
 public class Inventory : MonoBehaviour
 {
