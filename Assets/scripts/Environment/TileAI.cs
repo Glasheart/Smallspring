@@ -21,7 +21,7 @@ public class TileAI : MonoBehaviour
         float chance = Random.Range(0.0f, 1.0f);
         selected_item = spawn_options[Random.Range(1, spawn_options.Length)];
 
-        if (chance - (float)selected_item/100 + .01f < .9f)
+        if (chance - (float)selected_item/50 < .9f)
         {
             selected_item = Item_types.EMPTY;
         }
