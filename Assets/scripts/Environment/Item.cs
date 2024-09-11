@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [SerializeField] private LayerMask tool_layer;
-    [SerializeField] private Item_types item_types;
+    public Item_types item_types;
     private Inventory inventory;
     public bool is_tree = false;
     private BoxCollider2D tree_collider;
@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tree_collider.IsTouchingLayers(tool_layer)) 
+        if(tree_collider.IsTouchingLayers(tool_layer) && item_types != Item_types.EMPTY) 
         {
             inventory.add_item(item_types);
             Destroy(gameObject);

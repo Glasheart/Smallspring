@@ -19,10 +19,10 @@ public class Room_entrance : MonoBehaviour
             if (enters_village)
             {
                 player_camera.gameObject.GetComponent<cam_track>().locked = false;
-                player.position = transform.parent.position;
+                player.position = new Vector3(transform.parent.position.x, transform.parent.position.y, 0);
                 return;
             }
-            player.position = transform.parent.position;
+            player.position = new Vector3(transform.parent.position.x, transform.parent.position.y, 0);
             player_camera.gameObject.GetComponent<cam_track>().locked = true;
             player_camera.position = new Vector3(transform.parent.parent.position.x, transform.parent.parent.position.y, -10);
         }
