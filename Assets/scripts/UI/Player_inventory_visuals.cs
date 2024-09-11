@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Player_inventory_visuals : MonoBehaviour
 {
-    [SerializeField] private Sprite empty, herb, wood;
+    [SerializeField] private Sprite[] sprites;
+    [SerializeField] private Sprite empty;
     [SerializeField] private bool chest = false;
 
     private Image[] visual_slots;
@@ -50,16 +51,32 @@ public class Player_inventory_visuals : MonoBehaviour
         {
             visual_slots[i].sprite = empty;
             texts[i].text = "";
+            return;
         }
-        else if (inventory.slots[i].type == Item_types.HERB)
+        
+        texts[i].text = inventory.slots[i].count.ToString();
+
+        switch (inventory.slots[i].type)
         {
-            visual_slots[i].sprite = herb;
-            texts[i].text = inventory.slots[i].count.ToString();
-        }
-        else if (inventory.slots[i].type == Item_types.WOOD)
-        {
-            visual_slots[i].sprite = wood;
-            texts[i].text = inventory.slots[i].count.ToString();
+            case Item_types.HERB:
+                visual_slots[i].sprite = sprites[0];
+                return;
+            case Item_types.WOOD:
+                visual_slots[i].sprite = sprites[1];
+                return;
+            case Item_types.BLUEBERRIES:
+                visual_slots[i].sprite = sprites[2];
+                return;
+            case Item_types.COFFEEBEANS:
+                visual_slots[i].sprite = sprites[3];
+                return;
+            case Item_types.PUREBERRIES:
+                visual_slots[i].sprite = sprites[4];
+                return;
+            case Item_types.STRAWBERRIES:
+                visual_slots[i].sprite = sprites[5];
+                return;
+
         }
     }
 }

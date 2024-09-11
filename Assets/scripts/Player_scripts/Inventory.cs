@@ -11,23 +11,23 @@ public struct slot
 }
 public enum Item_types
 {
-    EMPTY = 0,
-    HERB = 2,
-    WOOD = 1,
-    COFFEEBEANS = 1,
-    GLOWBERRIES = 3,
-    STRAWBERRIES = 1,
-    BLUEBERRIES = 1,
-    RASPBERRIES = 2,
-    BLACKBERRIES = 2,
-    SAP = 2,
-    PUREBERRIES = 4,
-    APPLES = 2,
-    TEALEAVES = 1,
-    CAMOMILE = 2,
-    GINGER = 2,
-    FEVERFEW = 3,
-    GINSENG = 3
+    EMPTY,
+    HERB,
+    WOOD,
+    COFFEEBEANS,
+    GLOWBERRIES,
+    STRAWBERRIES,
+    BLUEBERRIES,
+    RASPBERRIES,
+    BLACKBERRIES,
+    SAP,
+    PUREBERRIES,
+    APPLES,
+    TEALEAVES,
+    CAMOMILE,
+    GINGER,
+    FEVERFEW,
+    GINSENG
 }
 public class Inventory : MonoBehaviour
 {
@@ -36,6 +36,7 @@ public class Inventory : MonoBehaviour
     public int money = 0;
     public bool is_chest = false;
     private Player_inventory_visuals vis;
+    private TileAI value_source;
 
     private void Start()
     {
@@ -74,7 +75,7 @@ public class Inventory : MonoBehaviour
     {
        for(int i = 0;i < slots.Length;i++)
         {
-            money += slots[i].count * (int)slots[i].type;
+            money += slots[i].count * (int)value_source.get_rarity(slots[i].type);
 
             empty_inventory_slot(i);
         }
