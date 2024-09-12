@@ -193,40 +193,40 @@ public class CraftingMenu : MonoBehaviour
             case 1: //Strawberry Latte
                 
                 break;
-            case 2:
+            case 2: //Blueberry
 
                 break;
-            case 3:
+            case 3: //Raspberry
 
                 break;
-            case 4:
+            case 4: //Blackberry
 
                 break;
-            case 5:
+            case 5: //Glowfee
 
                 break;
-            case 6:
+            case 6: //Pure Coffee
 
                 break;
-            case 7:
+            case 7: //Tea
 
                 break;
-            case 8:
+            case 8: //Sweetened Ice Tea sap
 
                 break;
-            case 9:
+            case 9: //Ginger Tea
 
                 break;
-            case 10:
+            case 10: //Chamomile
 
                 break;
-            case 11:
+            case 11: //Feverfew
 
                 break;
-            case 12:
+            case 12: //Ginseng
 
                 break;
-            case 13:
+            case 13: //Pureberry Coffee
 
                 break;
         }
