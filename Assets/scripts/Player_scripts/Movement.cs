@@ -5,18 +5,21 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float max_speed, acceleration;
+    [SerializeField] private float oxygen = 3;
 
     public bool chest_mode = false;
     private slot_highlight slot;
     private Rigidbody2D rb;
     private float horzontal, vertical;
     private GameObject chestUI;
+    private BoxCollider2D player_collider;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
         slot = GameObject.Find("Highlight").GetComponent<slot_highlight>();
         chestUI = GameObject.Find("chest_inventory");
+        player_collider = GetComponent<BoxCollider2D>();
     }
 
     private float cur_speed;
@@ -33,11 +36,11 @@ public class Movement : MonoBehaviour
         
         direction = new Vector2(horzontal, vertical);
 
-        if(rb.velocity.magnitude < max_speed)
-            rb.velocity = new Vector3(max_speed * horzontal, max_speed * vertical);
+        if(rb.velocity.magnitude < cur_speed)
+            rb.velocity = new Vector3(cur_speed * horzontal, cur_speed * vertical);
         else
         {
-            rb.velocity = new Vector3(max_speed * horzontal * Mathf.Abs(direction.normalized.x), max_speed * vertical * Mathf.Abs(direction.normalized.y));
+            rb.velocity = new Vector3(cur_speed * horzontal * Mathf.Abs(direction.normalized.x), cur_speed * vertical * Mathf.Abs(direction.normalized.y));
         }
 
         if ((rb.velocity.x < 0 && transform.localScale.x > 0) || (rb.velocity.x > 0 && transform.localScale.x < 0))
@@ -84,6 +87,18 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             slot.drop_item();
+        }
+        if (player_collider.IsTouchingLayers(LayerMask.NameToLayer("Flooded")))
+        {
+            oxygen-=Time.deltaTime;
+            cur_speed = max_speed / 2;
+            if (oxygen < 0)
+                Debug.Log("You drowned");
+        }
+        else
+        {
+            oxygen = 3;
+            cur_speed = max_speed;
         }
     }
     private void flip()

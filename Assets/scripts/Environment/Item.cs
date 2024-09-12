@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     private Inventory inventory;
     public bool is_tree = false;
     private BoxCollider2D tree_collider;
+ 
     void Start()
     {
         tree_collider = GetComponent<BoxCollider2D>();

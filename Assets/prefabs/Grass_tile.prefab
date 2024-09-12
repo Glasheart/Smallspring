@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7555858850281011813}
   - component: {fileID: 3920080177577282039}
   - component: {fileID: 5223874216284361008}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grass_tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,3 +169,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 36dc31bfd3f0b354fa23a71ab5a7b51c, type: 3}
   - {fileID: 21300000, guid: f96d40bebc0c9e641a105a651bfde211, type: 3}
   - {fileID: 21300000, guid: f5d5fde27ff99074ea83a26d818ea109, type: 3}
+  flood_sprite: {fileID: 21300000, guid: a48bc8530be11734ebe806f99907d2fd, type: 3}

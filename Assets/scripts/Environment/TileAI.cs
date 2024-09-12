@@ -7,6 +7,7 @@ public class TileAI : MonoBehaviour
 {
     [SerializeField] private Item_types[] spawn_options = { Item_types.EMPTY};
     [SerializeField] private Sprite[] sprites;
+    [SerializeField] private Sprite flood_sprite;
 
     private Item item;
     private SpriteRenderer spriteRenderer;
@@ -38,7 +39,6 @@ public class TileAI : MonoBehaviour
     {
         if (selected_item == Item_types.EMPTY)
         {
-            boxCollider.enabled = false;
             return;
         }
         item.item_types = selected_item;
@@ -77,5 +77,14 @@ public class TileAI : MonoBehaviour
         if (three_val.Contains(selected))
             return 3;
         return 4;
+    }
+    public void flood()
+    {
+        if(Random.Range(0.0f, 1.0f) <= .1f)
+        {
+            spriteRenderer.sprite = flood_sprite;
+            item.item_types = Item_types.EMPTY;
+            gameObject.layer = LayerMask.NameToLayer("Default");
+        }
     }
 }
