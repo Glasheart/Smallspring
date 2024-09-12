@@ -19,7 +19,8 @@ public class CraftingMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        leftButton.interactable = false;
+        rightButton.interactable = true;
     }
 
     // Update is called once per frame

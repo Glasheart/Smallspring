@@ -27,7 +27,21 @@ public enum Item_types
     CAMOMILE,
     GINGER,
     FEVERFEW,
-    GINSENG
+    GINSENG,
+    COFFEE,
+    STRAWBERRYLATTE,
+    BLUEBERRYLATTE,
+    RASPBERRYLATTE,
+    BLACKBERRYLATTE,
+    GLOWFEE,
+    PURECOFFEE,
+    TEA,
+    SWEETENEDICETEA,
+    GINGERTEA,
+    CHAMOMILETEA,
+    FEVERFEWTEA,
+    GINSENGTEA,
+    PUREBERRYTEA
 }
 public class Inventory : MonoBehaviour
 {

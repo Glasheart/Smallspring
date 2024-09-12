@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCScript: MonoBehaviour
+public class Customer : MonoBehaviour
 {
     [SerializeField] Rigidbody2D body;
-    
 
-    private Vector2[] moveChoices = new Vector2[] {Vector2.zero, Vector2.right, Vector2.up, Vector2.left, Vector2.down, Vector2.zero};
+
+    private Vector2[] moveChoices = new Vector2[] { Vector2.zero, Vector2.right, Vector2.up, Vector2.left, Vector2.down, Vector2.zero };
 
     public float lowChoiceTime = 1.0f;
     public float highChoiceTime = 2.0f;
@@ -25,19 +25,20 @@ public class NPCScript: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        decisionTime = Random.Range(lowChoiceTime, highChoiceTime);
-
-        ChooseMoveDirection();
+        //decisionTime = Random.Range(lowChoiceTime, highChoiceTime);
+        decisionTime = 12.5f;
+        currDirection = 3;
+        //ChooseMoveDirection();
     }
 
     // Update is called once per frame
     void Update()
     {
         body.velocity = moveChoices[currDirection] * speed;
-        if(decisionTime > 0) decisionTime -= Time.deltaTime;
+        if (decisionTime > 0) decisionTime -= Time.deltaTime;
         else
         {
-            body.velocity = Vector2.zero; 
+            body.velocity = Vector2.zero;
             decisionTime = Random.Range(lowChoiceTime, highChoiceTime);
             ChooseMoveDirection();
         }

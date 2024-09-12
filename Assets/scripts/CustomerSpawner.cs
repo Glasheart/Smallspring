@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TempDialogueTrigger : MonoBehaviour
+public class CustomerSpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,13 +14,5 @@ public class TempDialogueTrigger : MonoBehaviour
     void Update()
     {
         
-    }
-    
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.gameObject.layer == 6) //NPC
-        {
-            other.GetComponent<NPCScript>().Talk();
-        }
     }
 }
