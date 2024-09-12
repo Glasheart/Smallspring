@@ -460,9 +460,9 @@ MonoBehaviour:
   - {fileID: 1492741497}
   - {fileID: 2063495179}
   shopPanel: {fileID: 1901078974}
-  BerrySprite: {fileID: 0}
-  DrinkSprite: {fileID: 0}
-  HerbSprite: {fileID: 0}
+  BerrySprite: {fileID: 21300000, guid: 12ae7d058b6d01140ae90a758d225298, type: 3}
+  DrinkSprite: {fileID: 21300000, guid: a2cb427576b28f544bb8d3f2a359b107, type: 3}
+  HerbSprite: {fileID: 21300000, guid: 32de86e68b104124aa6c83221fe85576, type: 3}
   WoodSprite: {fileID: 0}
   inventorySlots: 000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &27993793
@@ -29247,7 +29247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1641297668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54305,7 +54305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1901078975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55710,6 +55710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059521445}
+  - component: {fileID: 2059521446}
   m_Layer: 0
   m_Name: CustomerSpawner
   m_TagString: Untagged
@@ -55732,6 +55733,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059521446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059521444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b34c92304d07a4da2fb747e3af4e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnTimes:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!1 &2063495177
 GameObject:
   m_ObjectHideFlags: 0

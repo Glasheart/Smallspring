@@ -46,7 +46,7 @@ public class Shopkeeper : MonoBehaviour
             if (inventory.slots[i].type != Item_types.EMPTY)
             {
                 //Set up sprites
-                /*if (inventory.slots[i].type == Item_types.COFFEEBEANS || inventory.slots[i].type == Item_types.STRAWBERRIES 
+                if (inventory.slots[i].type == Item_types.COFFEEBEANS || inventory.slots[i].type == Item_types.STRAWBERRIES 
                     || inventory.slots[i].type == Item_types.RASPBERRIES || inventory.slots[i].type == Item_types.BLACKBERRIES 
                     || inventory.slots[i].type == Item_types.BLACKBERRIES || inventory.slots[i].type == Item_types.GLOWBERRIES 
                     || inventory.slots[i].type == Item_types.PUREBERRIES)//different types of berries
@@ -57,8 +57,11 @@ public class Shopkeeper : MonoBehaviour
                 || inventory.slots[i].type == Item_types.FEVERFEW)
                 {
                     images[count].sprite = HerbSprite;
+                } else if (inventory.slots[i].type == Item_types.WOOD)
+                {
+                    images[count].sprite = WoodSprite;
                 }
-                */
+                
 
 
                 if (inventory.slots[i].type == Item_types.COFFEEBEANS)
