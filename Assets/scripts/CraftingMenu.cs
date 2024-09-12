@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class CraftingMenu : MonoBehaviour
     [SerializeField] private Button leftButton; //these will move page left and right, one page for coffee, one for teas
     [SerializeField] private Button rightButton;
     [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI itemDescription;
     private Inventory inventory;
 
     public bool hasCoffeeBeans;
@@ -23,7 +25,10 @@ public class CraftingMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ItemSelected(0);
+        }
     }
 
     public void SetUp()
@@ -113,19 +118,72 @@ public class CraftingMenu : MonoBehaviour
         {
             for (int j = 0; j < buttons.Length/2; j++)
             {
-                buttons[i].gameObject.SetActive(false);
+                buttons[j + buttons.Length / 2].gameObject.SetActive(true);
+                buttons[j].gameObject.SetActive(false);
             }
             rightButton.interactable = false;
             leftButton.interactable = true;
         }
         else //go back to coffee page
         {
-            for (int j = buttons.Length/2 + 1; j < buttons.Length; j++)
+            for (int j = buttons.Length/2; j < buttons.Length; j++)
             {
-                buttons[i].gameObject.SetActive(true);
+                buttons[j - buttons.Length / 2].gameObject.SetActive(true); 
+                buttons[j].gameObject.SetActive(false);
             }
             rightButton.interactable= true;
             leftButton.interactable= false;
+        }
+    }
+
+
+
+    public void ItemSelected(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                itemDescription.text = "Coffee, a great way to start your day.";
+                break;
+            case 1:
+                itemDescription.text = "A latte dyed a light pink. Strawberry flavored, a latte resting on a bed of strawberries";
+                break;
+            case 2:
+                itemDescription.text = "A latte with added blueberries. The blueberries add a subtle sweetness";
+                break;
+            case 3:
+                itemDescription.text = "A latte with a decorative raspberry floating on the surface.";
+                break;
+            case 4:
+                itemDescription.text = "A latte with a tart flavor. Despite the blackberries added, it is indistinguishable from a normal latte.";
+                break;
+            case 5:
+                itemDescription.text = "A coffe that gives off a faint glow. Drinking it can soothe fatigue, and heal minor wounds,";
+                break;
+            case 6:
+                itemDescription.text = "A coffee in truest of forms. The pureberries enhance the bitterness of the coffee, while not becoming overwhelming.";
+                break;
+            case 7:
+                itemDescription.text = "Tea, a soothing way to start your day.";
+                break;
+            case 8:
+                itemDescription.text = "Sweetened iced tea. Syrup adds a sweetness enjoyed by all.";
+                break;
+            case 9:
+                itemDescription.text = "Ginger tea, a drink that helps with nausea.";
+                break;
+            case 10:
+                itemDescription.text = "Chamomile tea, a relaxing drink that grants better sleep, and soothes anxiety.";
+                break;
+            case 11:
+                itemDescription.text = "Feverfew tea, an effective way to fight off fevers while also giving an earthy flavor.";
+                break;
+            case 12:
+                itemDescription.text = "Ginseng tea, a drink to boost your energy.";
+                break;
+            case 13:
+                itemDescription.text = "A tea in the truest of forms. The pureberries enhance the tea's soothing nature, and add a subtle sweetness.";
+                break;
         }
     }
     public void CraftItem(int type) //each button will pass a seperate int to determine what to craft
@@ -133,9 +191,9 @@ public class CraftingMenu : MonoBehaviour
         switch (type)
         {
             case 0: //Cofee
-
+                //take 1 bean away, give coffee
                 break;
-            case 1: //
+            case 1: //Strawberry Latte
 
                 break;
         }
