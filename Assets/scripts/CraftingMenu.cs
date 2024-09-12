@@ -25,10 +25,7 @@ public class CraftingMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            ItemSelected(0);
-        }
+
     }
 
     public void SetUp()
