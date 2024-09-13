@@ -3010,7 +3010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &501465219
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -55746,8 +55746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 501465218}
+  - {fileID: 538770508}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -55757,6 +55757,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  countdown: 0
 --- !u!1 &2063495177
 GameObject:
   m_ObjectHideFlags: 0

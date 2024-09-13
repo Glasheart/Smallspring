@@ -6,6 +6,7 @@ public class Customer : MonoBehaviour
 {
     [SerializeField] Rigidbody2D body;
 
+    private Inventory inventory;
 
     private Vector2[] moveChoices = new Vector2[] { Vector2.zero, Vector2.right, Vector2.up, Vector2.left, Vector2.down, Vector2.zero };
 
@@ -20,7 +21,10 @@ public class Customer : MonoBehaviour
     public int hourWanderStart;//when they will start to wander the village
     public int hourWanderEnd; //when they will be back home
 
-    public Dialogue dialogue;
+    public Dialogue[] dialogue = new Dialogue[3]; //requested drink, thank you, wrong drink response
+
+    public int drinkID;
+    public Item_types desiredDrink;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,8 @@ public class Customer : MonoBehaviour
         //decisionTime = Random.Range(lowChoiceTime, highChoiceTime);
         decisionTime = 12.5f;
         currDirection = 3;
+        drinkID = Random.Range(0, 14);
+        GetDrink(drinkID);
         //ChooseMoveDirection();
     }
 
@@ -52,6 +58,80 @@ public class Customer : MonoBehaviour
     public void Talk()
     {
         speed = 0f;
-        FindObjectOfType<DialogueController>().StartConversation(dialogue);
+        FindObjectOfType<DialogueController>().StartConversation(dialogue[0]);
+    }
+    public void GiveDrink(Item_types given)
+    {
+        if (desiredDrink == given) //correct drink given
+        {
+            FindObjectOfType<DialogueController>().StartConversation(dialogue[1]);
+            //take item away, sell item, walk away
+
+            Leave();
+        }
+        else //wrong drink given
+        {
+            FindObjectOfType<DialogueController>().StartConversation(dialogue[2]);
+            Leave();
+        }
+    }
+    public IEnumerator Leave()
+    {
+        decisionTime = 4f;
+        currDirection = 4;
+        yield return new WaitForSeconds(4);
+        decisionTime = 8f;
+        currDirection = 1;
+        gameObject.SetActive(false);
+
+    }
+
+    public void GetDrink(int ID)
+    {
+        switch (ID)
+        {
+            case 0:
+                desiredDrink = Item_types.COFFEE;
+                break;
+            case 1:
+                desiredDrink = Item_types.STRAWBERRYLATTE;
+                break;
+            case 2:
+                desiredDrink = Item_types.BLUEBERRYLATTE;
+                break;
+            case 3:
+                desiredDrink = Item_types.RASPBERRYLATTE;
+                break;
+            case 4:
+                desiredDrink = Item_types.BLACKBERRYLATTE;
+                break;
+            case 5:
+                desiredDrink = Item_types.GLOWFEE;
+                break;
+            case 6:
+                desiredDrink = Item_types.PURECOFFEE;
+                break;
+            case 7:
+                desiredDrink = Item_types.TEA;
+                break;
+            case 8:
+                desiredDrink = Item_types.SWEETENEDICETEA;
+                break;
+            case 9:
+                desiredDrink = Item_types.GINGERTEA;
+                break;
+            case 10:
+                desiredDrink = Item_types.CHAMOMILETEA;
+                break;
+            case 11:
+                desiredDrink = Item_types.FEVERFEWTEA;
+                break;
+            case 12:
+                desiredDrink = Item_types.GINSENGTEA;
+                break;
+            case 13:
+                desiredDrink = Item_types.PUREBERRYTEA;
+                break;
+        }
     }
 }
