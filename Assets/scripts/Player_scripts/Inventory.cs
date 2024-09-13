@@ -133,5 +133,11 @@ public class Inventory : MonoBehaviour
     public void increment_slot(int selected_slot, int i)
     {
         slots[selected_slot].count += i;
+
+        if(slots[selected_slot].count <= 0)
+        {
+            slots[selected_slot].count = 0;
+            slots[selected_slot].type = Item_types.EMPTY;
+        }
     }
 }
