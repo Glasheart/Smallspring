@@ -130,4 +130,8 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+    public void increment_slot(int selected_slot, int i)
+    {
+        slots[selected_slot].count += i;
+    }
 }
