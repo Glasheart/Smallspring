@@ -3094,8 +3094,14 @@ MonoBehaviour:
   hourWanderStart: 0
   hourWanderEnd: 0
   dialogue:
-    name: 
+  - name: 
     sentences: []
+  - name: 
+    sentences: []
+  - name: 
+    sentences: []
+  drinkID: 0
+  desiredDrink: 0
 --- !u!212 &501465222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23401,8 +23407,14 @@ MonoBehaviour:
   hourWanderStart: 0
   hourWanderEnd: 0
   dialogue:
-    name: 
+  - name: 
     sentences: []
+  - name: 
+    sentences: []
+  - name: 
+    sentences: []
+  drinkID: 0
+  desiredDrink: 0
 --- !u!212 &538770512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29247,7 +29259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1641297668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54305,7 +54317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1901078975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55757,6 +55769,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  desiredDrink: 0
   countdown: 0
 --- !u!1 &2063495177
 GameObject:
