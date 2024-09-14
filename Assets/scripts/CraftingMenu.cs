@@ -11,6 +11,7 @@ public class CraftingMenu : MonoBehaviour
     [SerializeField] private Button rightButton;
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI itemDescription;
+    [SerializeField] private LayerMask interact_layer;
     private Inventory inventory;
 
     public bool hasCoffeeBeans;
@@ -19,17 +20,30 @@ public class CraftingMenu : MonoBehaviour
     public int firstSlot;
     public int secondSlot;
 
+    private BoxCollider2D craft_collider;
+
     // Start is called before the first frame update
     void Start()
     {
+        inventory = GetComponent<Inventory>();
+        craft_collider = GetComponent<BoxCollider2D>();
         leftButton.interactable = false;
         rightButton.interactable = true;
     }
 
-    // Update is called once per frame
+    private bool is_crafting = false;
     void Update()
     {
-
+        if (craft_collider.IsTouchingLayers(interact_layer) && !is_crafting)
+        {
+            is_crafting = true;
+            SetUp();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab) && is_crafting)
+        {
+            is_crafting = false;
+            panel.SetActive(false);
+        }
     }
 
     public void SetUp()
