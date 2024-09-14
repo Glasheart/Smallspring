@@ -16,8 +16,14 @@ public class Room_entrance : MonoBehaviour
     {
         if (collision.name == "Player")
         {
+            if(gameObject.name == "Forest_entrance")
+            {
+                GameObject.Find("Music_controller").GetComponent<Music_Controller>().change_clip(Audio_space.FOREST);
+            }
             if (enters_village)
             {
+                GameObject.Find("Music_controller").GetComponent<Music_Controller>().change_clip(Audio_space.VILLAGE);
+
                 player_camera.gameObject.GetComponent<cam_track>().locked = false;
                 player.position = new Vector3(transform.parent.position.x, transform.parent.position.y, 0);
                 return;
