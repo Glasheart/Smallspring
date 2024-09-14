@@ -8,7 +8,6 @@ public class slot_highlight : MonoBehaviour
     private Transform[] positions, chest_postions;
     private GameObject inventory_visuals, chest_visuals;
     private Inventory player_inventory, chest_inventory;
-    private slot_highlight currSlot;
     private int highlighted_slot = 0;
     public int vertical_slot = 0;
 
