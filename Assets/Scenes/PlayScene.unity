@@ -828,18 +828,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customers:
-  - {fileID: 1223508802}
   - {fileID: 1071920914}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1223508802}
+  - {fileID: 351315928}
+  - {fileID: 1002484084}
+  - {fileID: 1960862686}
   spawnTimes:
   - 0
   - 0
   - 0
   - 0
   - 0
-  desiredDrink: 0
   countdown: 0
 --- !u!4 &17918605
 Transform:
@@ -10470,7 +10469,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.24771404}
-  m_Size: {x: 1, y: 1.5045719}
+  m_Size: {x: 2.5, y: 5}
   m_Direction: 0
 --- !u!50 &351315930
 Rigidbody2D:
@@ -10594,7 +10593,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.3, y: 48.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -61219,6 +61218,7 @@ GameObject:
   - component: {fileID: 821826532}
   - component: {fileID: 821826530}
   - component: {fileID: 821826534}
+  - component: {fileID: 821826535}
   m_Layer: 10
   m_Name: Crafting
   m_TagString: Untagged
@@ -61376,6 +61376,22 @@ MonoBehaviour:
   hasTeaLeaves: 0
   firstSlot: 0
   secondSlot: 0
+--- !u!114 &821826535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821826529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c064e11bd10b2af4ea5674836bd14d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot_count: 0
+  slot_max: 0
+  money: 0
+  is_chest: 0
 --- !u!1 &828718773
 GameObject:
   m_ObjectHideFlags: 0
@@ -74166,7 +74182,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.24771404}
-  m_Size: {x: 1, y: 1.5045719}
+  m_Size: {x: 2.5, y: 5}
   m_Direction: 0
 --- !u!50 &1002484086
 Rigidbody2D:
@@ -74290,7 +74306,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.3, y: 48.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76248,8 +76264,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24771404}
-  m_Size: {x: 1, y: 1.5045719}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.5, y: 5}
   m_Direction: 0
 --- !u!50 &1071920916
 Rigidbody2D:
@@ -76372,8 +76388,8 @@ Transform:
   m_GameObject: {fileID: 1071920914}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.26, y: 48.47, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 50.26, y: 48.33, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80322,7 +80338,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.24771404}
-  m_Size: {x: 1, y: 1.5045719}
+  m_Size: {x: 2.5, y: 5}
   m_Direction: 0
 --- !u!50 &1223508804
 Rigidbody2D:
@@ -80446,7 +80462,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.3, y: 48.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -94110,6 +94126,7 @@ GameObject:
   - component: {fileID: 1755716678}
   - component: {fileID: 1755716677}
   - component: {fileID: 1755716680}
+  - component: {fileID: 1755716681}
   m_Layer: 0
   m_Name: ShopKeeper
   m_TagString: Untagged
@@ -94245,8 +94262,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1755716680
-CapsuleCollider2D:
+--- !u!61 &1755716680
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94277,9 +94294,35 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3, y: 5}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.1098603}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 5}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 5.219721}
+  m_EdgeRadius: 0
+--- !u!114 &1755716681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755716676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c064e11bd10b2af4ea5674836bd14d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot_count: 0
+  slot_max: 0
+  money: 0
+  is_chest: 0
 --- !u!1001 &1761454046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121777,7 +121820,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.24771404}
-  m_Size: {x: 1, y: 1.5045719}
+  m_Size: {x: 2.5, y: 5}
   m_Direction: 0
 --- !u!50 &1960862688
 Rigidbody2D:
@@ -121901,7 +121944,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.3, y: 48.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -126799,8 +126842,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6132076, g: 0.39976102, b: 0.29792634, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 54c1bf306f03cac4595bb0d25a89d107, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
