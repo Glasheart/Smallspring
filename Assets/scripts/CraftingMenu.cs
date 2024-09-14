@@ -16,6 +16,9 @@ public class CraftingMenu : MonoBehaviour
     public bool hasCoffeeBeans;
     public bool hasTeaLeaves;
 
+    public int firstSlot;
+    public int secondSlot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -190,45 +193,143 @@ public class CraftingMenu : MonoBehaviour
         {
             case 0: //Cofee
                 //take 1 bean away, give coffee
+                for(int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.add_item(Item_types.COFFEE);
                 break;
             case 1: //Strawberry Latte
-                
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.STRAWBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.STRAWBERRYLATTE);
+
                 break;
             case 2: //Blueberry
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.BLUEBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.BLUEBERRYLATTE);
 
                 break;
             case 3: //Raspberry
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.RASPBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.RASPBERRYLATTE);
                 break;
             case 4: //Blackberry
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.BLACKBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.BLACKBERRYLATTE);
                 break;
             case 5: //Glowfee
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.GLOWBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.GLOWFEE);
                 break;
             case 6: //Pure Coffee
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.COFFEEBEANS) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.PUREBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.PURECOFFEE);
                 break;
             case 7: //Tea
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.TEA);
                 break;
             case 8: //Sweetened Ice Tea sap
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.SAP) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.SWEETENEDICETEA);
                 break;
             case 9: //Ginger Tea
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.GINGER) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.GINGERTEA);
                 break;
             case 10: //Chamomile
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.CAMOMILE) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.CHAMOMILETEA);
                 break;
             case 11: //Feverfew
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.FEVERFEW) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.FEVERFEWTEA);
                 break;
             case 12: //Ginseng
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.GINSENG) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.GINSENGTEA);
                 break;
             case 13: //Pureberry Coffee
-
+                for (int i = 0; i < inventory.slots.Length; i++)
+                {
+                    if (inventory.slots[i].type == Item_types.TEALEAVES) firstSlot = i;
+                    else if (inventory.slots[i].type == Item_types.PUREBERRIES) secondSlot = i;
+                }
+                inventory.increment_slot(firstSlot, -1);
+                inventory.increment_slot(secondSlot, -1);
+                inventory.add_item(Item_types.PUREBERRYTEA);
                 break;
         }
         updateShop();

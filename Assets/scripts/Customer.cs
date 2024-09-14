@@ -23,6 +23,8 @@ public class Customer : MonoBehaviour
 
     public Dialogue[] dialogue = new Dialogue[3]; //requested drink, thank you, wrong drink response
 
+    [SerializeField] private slot_highlight currSlot;
+
     public int drinkID;
     public Item_types desiredDrink;
 
@@ -66,7 +68,7 @@ public class Customer : MonoBehaviour
         {
             FindObjectOfType<DialogueController>().StartConversation(dialogue[1]);
             //take item away, sell item, walk away
-
+            //inventory.increment_slot(currSlot.highlighted_slot, -1);
             Leave();
         }
         else //wrong drink given
