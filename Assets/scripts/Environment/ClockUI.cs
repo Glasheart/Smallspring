@@ -11,8 +11,10 @@ public class ClockUI : MonoBehaviour
     private int cur_hour = 6;
     private TMP_Text text;
 
+    private GameObject rain;
     void Start()
     {
+        rain = GameObject.Find("Rain");
         text = GetComponent<TMP_Text>();
         seconds_left = seconds_per_hour;
     }
@@ -20,6 +22,9 @@ public class ClockUI : MonoBehaviour
     private string half = "AM";
     void Update()
     {
+        if(half == "AM")
+            rain.SetActive(false);
+
         seconds_left -= Time.deltaTime;
 
         if(seconds_left <= 0)
@@ -38,12 +43,16 @@ public class ClockUI : MonoBehaviour
                 }
                 cur_hour = 1;
             }
-            if(cur_hour >= when_storm_starts && half == "PM")
+            if(cur_hour >= when_storm_starts && half == "PM" && cur_hour != 12)
             {
                 foreach(GameObject g in GameObject.FindGameObjectsWithTag("Tile")) 
                 {
                     g.GetComponent<TileAI>().flood();
                 }
+            }
+            if (cur_hour == when_storm_starts-1 && half == "PM")
+            {
+                rain.SetActive(true);
             }
         }
 
