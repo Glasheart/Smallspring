@@ -96,6 +96,12 @@ public class Inventory : MonoBehaviour
 
         Debug.Log(money);
     }
+    public void sell_item(int i)
+    {
+        money += slots[i].count * (int)value_source.get_rarity(slots[i].type);
+
+        empty_inventory_slot(i);
+    }
     public void empty_inventory_slot(int i)
     {
         slots[i].type = Item_types.EMPTY;

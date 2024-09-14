@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class Shopkeeper : MonoBehaviour
     [SerializeField] public TextMeshProUGUI[] price = new TextMeshProUGUI[9];
     [SerializeField] public Image[] images = new Image[9];
     [SerializeField] public GameObject shopPanel;
+    [SerializeField] private LayerMask interact_layer;
 
 
     public Sprite BerrySprite;
@@ -23,20 +25,34 @@ public class Shopkeeper : MonoBehaviour
 
     public int[] inventorySlots = new int[9];
 
+    private BoxCollider2D shop_collider;
+
     // Start is called before the first frame update
     void Start()
     {
+        inventory = GetComponent<Inventory>();
+        shop_collider = GetComponent<BoxCollider2D>();
         //images[0].sprite = BerrySprite;
         for (int i = 0; i < Slots.Length; i++)
         {
             Slots[i].gameObject.SetActive(false);
         }
+        
     }
 
-    // Update is called once per frame
+    private bool is_shopping = false;
     void Update()
     {
-        
+        if (shop_collider.IsTouchingLayers(interact_layer) && !is_shopping)
+        {
+            is_shopping = true;
+            SetUpShop();
+        }
+        if(Input.GetKeyDown(KeyCode.Tab) && is_shopping) 
+        {
+            is_shopping = false;
+            shopPanel.SetActive(false);
+        }
     }
     public void SetUpShop()
     {
