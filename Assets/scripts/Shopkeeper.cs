@@ -142,6 +142,6 @@ public class Shopkeeper : MonoBehaviour
 
     public void sell(int slot) //slot passed through will correspond to the button, which the slot the item being sold is in is held in inventorySlots
     {
-        //inventory.sell_items(inventorySlots[slot]);
+        inventory.sell_item(inventorySlots[slot]);
     }
 }

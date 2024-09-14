@@ -35,7 +35,7 @@ public class Customer : MonoBehaviour
         //decisionTime = Random.Range(lowChoiceTime, highChoiceTime);
         decisionTime = 12.5f;
         currDirection = 3;
-        drinkID = Random.Range(0, 14);
+        drinkID = UnityEngine.Random.Range(0, 14);
         GetDrink(drinkID);
         dialogue[0].sentences[0] = "Hey, can I get a " + Enum.GetName(desiredDrink.GetType(), desiredDrink);
         //ChooseMoveDirection();
@@ -49,14 +49,14 @@ public class Customer : MonoBehaviour
         else
         {
             body.velocity = Vector2.zero;
-            decisionTime = Random.Range(lowChoiceTime, highChoiceTime);
+            decisionTime = UnityEngine.Random.Range(lowChoiceTime, highChoiceTime);
             ChooseMoveDirection();
         }
     }
 
     void ChooseMoveDirection()
     {
-        currDirection = Mathf.FloorToInt(Random.Range(0, moveChoices.Length));
+        currDirection = Mathf.FloorToInt(UnityEngine.Random.Range(0, moveChoices.Length));
     }
 
     public void Talk()
