@@ -3100,6 +3100,7 @@ MonoBehaviour:
     sentences: []
   - name: 
     sentences: []
+  currSlot: {fileID: 0}
   drinkID: 0
   desiredDrink: 0
 --- !u!212 &501465222
@@ -23413,6 +23414,7 @@ MonoBehaviour:
     sentences: []
   - name: 
     sentences: []
+  currSlot: {fileID: 0}
   drinkID: 0
   desiredDrink: 0
 --- !u!212 &538770512
@@ -29227,6 +29229,8 @@ MonoBehaviour:
   itemDescription: {fileID: 247189438}
   hasCoffeeBeans: 0
   hasTeaLeaves: 0
+  firstSlot: 0
+  secondSlot: 0
 --- !u!4 &1623440999
 Transform:
   m_ObjectHideFlags: 0
@@ -29259,7 +29263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1641297668
 RectTransform:
   m_ObjectHideFlags: 0
