@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,6 +37,7 @@ public class Customer : MonoBehaviour
         currDirection = 3;
         drinkID = Random.Range(0, 14);
         GetDrink(drinkID);
+        dialogue[0].sentences[0] = "Hey, can I get a " + Enum.GetName(desiredDrink.GetType(), desiredDrink);
         //ChooseMoveDirection();
     }
 
