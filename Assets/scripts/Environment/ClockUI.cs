@@ -20,6 +20,7 @@ public class ClockUI : MonoBehaviour
     }
 
     private string half = "AM";
+    private bool is_raining = false;
     void Update()
     {
         if(half == "AM")
@@ -50,9 +51,11 @@ public class ClockUI : MonoBehaviour
                     g.GetComponent<TileAI>().flood();
                 }
             }
-            if (cur_hour == when_storm_starts-1 && half == "PM")
+            if (cur_hour == when_storm_starts-1 && half == "PM" && !is_raining)
             {
                 rain.SetActive(true);
+                GameObject.Find("Music_controller").GetComponent<Music_Controller>().change_clip(Audio_space.STORM_FOREST);
+                is_raining=true;
             }
         }
 

@@ -5,11 +5,12 @@ using UnityEngine;
 public enum Audio_space
 {
     VILLAGE,
-    FOREST
+    FOREST,
+    STORM_FOREST
 }
 public class Music_Controller : MonoBehaviour
 {
-    [SerializeField] private AudioClip village_song, forest_song;
+    [SerializeField] private AudioClip village_song, forest_song, storm_song;
 
     private AudioSource source;
     public Audio_space area;
@@ -34,13 +35,17 @@ public class Music_Controller : MonoBehaviour
     public void change_clip(Audio_space space)
     {
         area = space;
-        if(space == Audio_space.VILLAGE)
+        switch (space)
         {
-            source.clip = village_song;
-        }
-        else if (space == Audio_space.FOREST)
-        {
-            source.clip = forest_song;
+            case Audio_space.VILLAGE:
+                source.clip = village_song;
+                break;
+            case Audio_space.FOREST:
+                source.clip = forest_song;
+                break;
+            case Audio_space.STORM_FOREST:
+                source.clip = storm_song;
+                break;
         }
         source.Stop();
         song_time = source.clip.length;

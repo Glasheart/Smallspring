@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float max_speed, acceleration;
     [SerializeField] private float oxygen = 3;
+    [SerializeField] private AudioClip[] steps = new AudioClip[2];
 
     public bool chest_mode = false;
     private slot_highlight slot;
@@ -13,6 +14,7 @@ public class Movement : MonoBehaviour
     private float horzontal, vertical;
     private GameObject chestUI;
     private BoxCollider2D player_collider;
+    private AudioSource source;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +22,11 @@ public class Movement : MonoBehaviour
         slot = GameObject.Find("Highlight").GetComponent<slot_highlight>();
         chestUI = GameObject.Find("chest_inventory");
         player_collider = GetComponent<BoxCollider2D>();
+        source = GetComponent<AudioSource>();
+
+        source.clip = steps[0];
+        step_timer = source.clip.length;
+        source.volume = .25f;
     }
 
     private float cur_speed;
@@ -46,8 +53,28 @@ public class Movement : MonoBehaviour
         if ((rb.velocity.x < 0 && transform.localScale.x > 0) || (rb.velocity.x > 0 && transform.localScale.x < 0))
             flip();
     }
+
+    private float step_timer = 0;
+    private int cur_step = 0;
     private void Update()
     {
+        if (rb.velocity.magnitude >= .1f)
+        {
+            if (step_timer >= source.clip.length)
+            {
+                source.clip = steps[cur_step];
+                source.Play();
+
+                if (cur_step == 0)
+                    cur_step = 1;
+                else
+                    cur_step = 0;
+                step_timer = 0;
+            }
+            step_timer += Time.deltaTime;
+        }
+        else
+            source.Stop();
         if (chest_mode)
         {
             rb.velocity = new Vector3(0, 0);
