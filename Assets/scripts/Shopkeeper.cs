@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,6 +20,8 @@ public class Shopkeeper : MonoBehaviour
     public Sprite DrinkSprite;
     public Sprite HerbSprite;
     public Sprite WoodSprite;
+
+    private Item_types item_Types;
 //these buttons will be activated only if the player has items in those slots.
 
     private Inventory inventory;
@@ -30,7 +33,7 @@ public class Shopkeeper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GetComponent<Inventory>();
+        inventory = GameObject.Find("Player").GetComponent<Inventory>();
         
         shop_collider = GetComponent<BoxCollider2D>();
         //images[0].sprite = BerrySprite;
@@ -58,6 +61,10 @@ public class Shopkeeper : MonoBehaviour
     public void SetUpShop()
     {
         int count = 0;
+        for(int i = 0; i < Slots.Length; i++)
+        {
+            Slots[i].gameObject.SetActive(false);
+        }
         for(int i = 0; i < inventory.slot_count; i++)
         {
             if (inventory.slots[i].type != Item_types.EMPTY)
@@ -78,10 +85,10 @@ public class Shopkeeper : MonoBehaviour
                 {
                     images[count].sprite = WoodSprite;
                 }
+
                 
-
-
-                if (inventory.slots[i].type == Item_types.COFFEEBEANS)
+                sellMessages[count].text = "Sell " + Enum.GetName(item_Types.GetType(), inventory.slots[i].type);
+                /*if (inventory.slots[i].type == Item_types.COFFEEBEANS)
                  {
                     sellMessages[count].text = "Sell coffee beans?";
                  } else if (inventory.slots[i].type == Item_types.STRAWBERRIES)
@@ -123,7 +130,7 @@ public class Shopkeeper : MonoBehaviour
                  } else if (inventory.slots[i].type == Item_types.WOOD)
                  {
                     sellMessages[count].text = "Sell Wood?";
-                 }
+                 }*/
                  
 
                 //set up price
@@ -144,5 +151,7 @@ public class Shopkeeper : MonoBehaviour
     public void sell(int slot) //slot passed through will correspond to the button, which the slot the item being sold is in is held in inventorySlots
     {
         inventory.sell_item(inventorySlots[slot]);
+        SetUpShop(); //called again to act as hopefully an update?
     }
+
 }

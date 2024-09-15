@@ -25,7 +25,7 @@ public class CraftingMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GetComponent<Inventory>();
+        inventory = GameObject.Find("Player").GetComponent<Inventory>();
         craft_collider = GetComponent<BoxCollider2D>();
         leftButton.interactable = false;
         rightButton.interactable = true;
