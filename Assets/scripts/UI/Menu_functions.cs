@@ -21,7 +21,7 @@ public class Menu_functions : MonoBehaviour
 
     public void play_game()
     {
-        transfer_scene = "Forest_scene";
+        transfer_scene = "PlayScene";
         StartCoroutine(switch_scene());
     }
     public void show_controls()

@@ -73,7 +73,7 @@ public class CraftingMenu : MonoBehaviour
         }
         if (hasTeaLeaves)
         {
-            buttons[buttons.Length].interactable= true;
+            buttons[7].interactable= true;
         }
 
         for(int i = 0; i < inventory.slots.Length; i++) //second loop needed so we know if they have beans or leaves for sure before starting to activate/deactivate buttons
