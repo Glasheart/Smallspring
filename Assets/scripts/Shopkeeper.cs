@@ -31,6 +31,7 @@ public class Shopkeeper : MonoBehaviour
     void Start()
     {
         inventory = GetComponent<Inventory>();
+        
         shop_collider = GetComponent<BoxCollider2D>();
         //images[0].sprite = BerrySprite;
         for (int i = 0; i < Slots.Length; i++)
