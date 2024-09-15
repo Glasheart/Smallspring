@@ -823,7 +823,7 @@ Transform:
   m_GameObject: {fileID: 17877827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.27, y: 46.64, z: -0.06943977}
+  m_LocalPosition: {x: 58.27, y: 46.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4169,6 +4169,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1755716677}
+        m_TargetAssemblyTypeName: Shopkeeper, Assembly-CSharp
+        m_MethodName: close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32411,10 +32423,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1267731826}
+      - m_Target: {fileID: 291879980}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 821826534}
+        m_TargetAssemblyTypeName: CraftingMenu, Assembly-CSharp
+        m_MethodName: close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -55982,7 +56006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196681486759930861, guid: d3e24fb17ec74904eb2002af2925d9de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.960582
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5196681486759930861, guid: d3e24fb17ec74904eb2002af2925d9de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -57668,7 +57692,7 @@ Transform:
   m_GameObject: {fileID: 663957656}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4, y: 0.7, z: 6}
+  m_LocalPosition: {x: -3.4, y: 0.7, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61733,6 +61757,7 @@ MonoBehaviour:
   hasTeaLeaves: 0
   firstSlot: 0
   secondSlot: 0
+  is_crafting: 0
 --- !u!114 &821826535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73962,7 +73987,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282532418
   m_fontColor: {r: 0.2603773, g: 0.2603773, b: 0.2603773, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -77887,7 +77912,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283321934
   m_fontColor: {r: 0.3056603, g: 0.3056603, b: 0.3056603, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -80919,7 +80944,7 @@ Transform:
   m_GameObject: {fileID: 1244150249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.49, y: 2.1, z: -0.07230964}
+  m_LocalPosition: {x: 43.49, y: 2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81362,7 +81387,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 201794008}
-  m_PlaneDistance: 10
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -93726,7 +93751,7 @@ Transform:
   m_GameObject: {fileID: 1526551075}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.114, y: 0.7, z: 0.03941822}
+  m_LocalPosition: {x: -9.114, y: 0.7, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -94171,7 +94196,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547705824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95904,7 +95929,7 @@ Transform:
   m_GameObject: {fileID: 1613779739}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.51, y: 0.49, z: 0.05671227}
+  m_LocalPosition: {x: 44.51, y: 0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96195,7 +96220,7 @@ Transform:
   m_GameObject: {fileID: 1625922902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.96, y: 44.55, z: -0.06943977}
+  m_LocalPosition: {x: 58.96, y: 44.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96372,7 +96397,7 @@ Transform:
   m_GameObject: {fileID: 1632275335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29, y: 46.64, z: -0.000840073}
+  m_LocalPosition: {x: 29, y: 46.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98066,7 +98091,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 201794008}
-  m_PlaneDistance: 10
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -98148,7 +98173,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 201794008}
-  m_PlaneDistance: 10
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -98463,7 +98488,7 @@ Transform:
   m_GameObject: {fileID: 1711738583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.29, y: 1.48, z: -0.07101709}
+  m_LocalPosition: {x: 25.29, y: 1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99878,6 +99903,7 @@ MonoBehaviour:
   HerbSprite: {fileID: 21300000, guid: 32de86e68b104124aa6c83221fe85576, type: 3}
   WoodSprite: {fileID: 0}
   inventorySlots: 000000000000000000000000000000000000000000000000000000000000000000000000
+  is_shopping: 0
 --- !u!212 &1755716678
 SpriteRenderer:
   m_ObjectHideFlags: 0

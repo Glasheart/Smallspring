@@ -31,13 +31,14 @@ public class CraftingMenu : MonoBehaviour
         rightButton.interactable = true;
     }
 
-    private bool is_crafting = false;
+    public bool is_crafting = false;
     void Update()
     {
         if (craft_collider.IsTouchingLayers(interact_layer) && !is_crafting)
         {
             is_crafting = true;
             SetUp();
+            panel.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Tab) && is_crafting)
         {
@@ -347,5 +348,10 @@ public class CraftingMenu : MonoBehaviour
                 break;
         }
         updateShop();
+    }
+
+    public void close()
+    {
+        is_crafting = false;
     }
 }

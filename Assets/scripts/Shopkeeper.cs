@@ -44,7 +44,7 @@ public class Shopkeeper : MonoBehaviour
         
     }
 
-    private bool is_shopping = false;
+    public bool is_shopping = false;
     void Update()
     {
         if (shop_collider.IsTouchingLayers(interact_layer) && !is_shopping)
@@ -152,6 +152,10 @@ public class Shopkeeper : MonoBehaviour
     {
         inventory.sell_item(inventorySlots[slot]);
         SetUpShop(); //called again to act as hopefully an update?
+    }
+    public void close()
+    {
+        is_shopping = false;
     }
 
 }
